@@ -18,6 +18,14 @@ class Cell
     live
   end
 
+  def position
+    {x: x, y: y}
+  end
+
+  def my_position?(position)
+    x == position[:x] && y == position[:y]
+  end
+
   private
   attr_accessor :live
 end
