@@ -21,7 +21,7 @@ class Cell
   def position
     {x: x, y: y}
   end
-
+  
   def my_position?(position)
     x == position[:x] && y == position[:y]
   end

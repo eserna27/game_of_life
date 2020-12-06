@@ -31,4 +31,10 @@ RSpec.describe Cell do
     cell.dead!
     expect(cell).not_to be_alive
   end
+
+  it "know if is my position" do
+    position = {x: 1, y: 1}
+    cell = Cell.new(position)
+    expect(cell.my_position?(**position)).to eq true
+  end
 end
