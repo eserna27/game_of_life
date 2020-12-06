@@ -7,6 +7,7 @@ RSpec.describe Cell do
     cell = Cell.new(position)
     expect(cell.x).to eq 1
     expect(cell.y).to eq 1
+    expect(cell.position).to eq({x: 1, y: 1})
   end
 
   it "is not alive when is new" do

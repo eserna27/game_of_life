@@ -7,7 +7,7 @@ module Neighbours
         neighbours << neighbour unless cell.my_position?(x: x, y: y)
       end
     end
-    neighbours
+    neighbours.compact
   end
 
   def x_radiuos(cell)

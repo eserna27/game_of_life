@@ -5,9 +5,9 @@ class World
   include Neighbours
   attr_reader :height, :width, :cells
 
-  def initialize(dimensions)
-    @height = dimensions[:height]
-    @width = dimensions[:width]
+  def initialize(height:, width:)
+    @height = height
+    @width = width
     build_cells
   end
 
@@ -22,7 +22,7 @@ class World
     @cells = {}
     width.times do |x|
       height.times do |y|
-        cell = create_cell(x, y)
+        cell = create_cell(x+1, y+1)
         add_cell(cell)
       end
     end
@@ -34,6 +34,6 @@ class World
   end
 
   def add_cell(cell)
-    @cells.merge!("#{cell.x}-#{cell.y}" => cell)
+    @cells.merge!("#{cell.x}-#{cell.y}" => cell) if cell
   end
 end
