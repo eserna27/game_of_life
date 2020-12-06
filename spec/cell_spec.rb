@@ -24,7 +24,8 @@ RSpec.describe Cell do
 
   it "could be set as dead" do
     position = {x: 1, y: 1}
-    cell = Cell.new(position).live!
+    cell = Cell.new(position)
+    cell.live!
     expect(cell).to be_alive
     cell.dead!
     expect(cell).not_to be_alive
